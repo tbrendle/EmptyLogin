@@ -3,6 +3,10 @@ Empty project
 
 1 - Fork this 
 
-2 - get a basic app with login/register form, and some bootstrap installed with assets management.
+2 - php composer.phar install
 
-3 - Profit. 
+3 - php bin/console doctrine:database:create
+
+4 - php bin/console doctrine:schema:update --force
+
+5 - Profit. 
