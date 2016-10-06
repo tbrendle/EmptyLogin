@@ -1,8 +1,14 @@
-{{ form_start(form) }}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<br>
+{{ form_start(form, {attr: {class: "form-signin"}}) }}
     {{ form_row(form.username) }}
     {{ form_row(form.email) }}
     {{ form_row(form.plainPassword.first) }}
     {{ form_row(form.plainPassword.second) }}
 
-    <button type="submit">Register!</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">M'inscrire !</button>
 {{ form_end(form) }}
+
+{% endblock %}

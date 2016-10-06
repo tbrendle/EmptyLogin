@@ -1,13 +1,29 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
+{% include('header.html.twig') %}
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <div class="container-fluid">
+            <div class="row">
+                {% include('navbar.html.twig') %}
+            </div>
+        </div>
+        <div class="container">
+
+            {% block body %}{% endblock %}
+
+        </div>
     </body>
+   {% block javascripts %}
+        {% javascripts filter="?jsqueeze"
+            '../app/Resources/public/js/jquery.js'
+            '../app/Resources/public/js/jquery.tablesorter.min.js'
+            '../app/Resources/public/js/bootstrap.min.js'
+            '../app/Resources/public/js/dropzone.js'
+            '../app/Resources/public/js/validator.min.js'
+            '../app/Resources/public/js/typeahead.js'
+            '@lifo_typeahead_js'
+        %}
+        <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
+    {% block javascript %}
+    {% endblock %}
 </html>

@@ -1,0 +1,42 @@
+<nav class="navbar navbar-static-top navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{path('homepage')}}"><span class="glyphicon glyphicon-home"></span></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        {% if is_granted("ROLE_USER") %}
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sites<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">BJRE</a></li>
+            <li><a href="#">Test</a></li>
+          </ul>
+        </li>
+        {% endif %}
+        {% if is_granted("ROLE_GOD") %}
+          <li><a href="{{ path('god_homepage')}}">SuperAdmin</a></li>
+        {% endif %}
+      </ul> 
+      {% if(app.user) %}
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{app.user.username}}<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/logout">Se déconnecter</a></li>
+          </ul>
+        </li>
+      </ul>
+      {% endif %}
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

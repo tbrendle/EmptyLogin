@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Empty project{% endblock %}</title>
+        {% block stylesheets %}
+            {% stylesheets filter="scssphp"
+                '../app/Resources/public/scss/style.scss'
+                '@lifo_typeahead_css'
+            %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>

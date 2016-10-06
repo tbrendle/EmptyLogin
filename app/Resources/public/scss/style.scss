@@ -1,0 +1,196 @@
+@import 'bootstrap';
+@import 'navbar-fixed-side';
+@import 'dropzone';
+
+/* Cs graphics */
+$bgDefault      : #135E8A;
+$bgHighlight    : #98DCE8;
+$colDefault     : white;
+$colHover       : black; 
+$background     : rgb(236, 239, 241);
+$boxBackground  : white;
+$boxBorder      : #ddd;
+
+body{
+	background:$background;
+}
+
+
+.form-signin {
+  max-width: 400px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* --- Fix some weird behavior in navbar --- */
+.navbar-form .input-group-btn .btn{
+    padding: 7px 12px 6px 12px;
+}
+
+/* --- Navbar Style --- */
+
+.navbar-default {
+    background-color: $bgDefault;
+    border-color: $bgHighlight;
+    .navbar-brand {
+        color: $colDefault;
+        &:hover, &:focus {
+            color: $colHover; }}
+    .navbar-nav {
+        > li {
+            > a {
+                color: $colDefault;
+                &:hover, &:focus {
+                    color: $colHover;   }}}
+        .active {
+            > a, > a:hover, > a:focus {
+                color: $colHover;
+                background-color: $bgHighlight; }}
+        .open {
+            > a, > a:hover, > a:focus {
+                color: $colHover;
+                background-color: $bgHighlight;
+                .caret {
+                    border-top-color: $colHover;
+                    border-bottom-color: $colHover; }}}
+        > .dropdown {
+            > a {
+                .caret {
+                    border-top-color: $colDefault;
+                    border-bottom-color: $colDefault; }
+                &:hover, &:focus {
+                    .caret {
+                        border-top-color: $colHover;
+                        border-bottom-color: $colHover; }}}}}
+    .navbar-toggle {
+        border-color: $bgHighlight;
+        &:hover, &:focus {
+            background-color: $bgHighlight; }
+        .icon-bar {
+            background-color: $colDefault; }}}
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: $colDefault;
+        &:hover, &:focus {
+            color: $colHover;
+            background-color: $bgHighlight; }}
+}
+
+/* --- Jumbotron --- */
+
+.jumbotron, .media, .table-responsive {
+    background-color: $boxBackground;
+    border-radius: 0 !important;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .05), 0 1px 4px 0 rgba(0, 0, 0, .08), 0 3px 1px -2px rgba(0, 0, 0, .2);
+}
+
+.media-body{
+    padding-top: 10px;
+    line-height: 160%;
+}
+
+/* --- Trombi --- */
+
+.trombinoscope td {
+    height: 1px;
+    vertical-align:top;
+    max-width: 158px;
+    word-wrap: break-word;
+}
+
+.trombinoscope .thumbnail{
+    height: 100%;
+}
+
+
+/* --- Tab content ---*/
+
+.nav-tabs > li > a {
+    background-color: #eee;
+    color: #555;
+    border: 1px solid #ddd;
+    border-radius: 0 !important;
+}
+
+.nav-tabs > li > a:hover {
+    border: 1px solid #ddd;
+}
+
+.tab-content {
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: $boxBackground;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.tab-pane{
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+}
+
+
+/* --- Table display --- */
+
+.tablesorter .header.headerSortUp:after{
+    font-size: 10px;
+    font-family: 'Glyphicons Halflings';
+    content: "\e114";
+}
+
+.tablesorter .header{
+
+    cursor: pointer;
+}
+.tablesorter .header:after{
+    font-size: 10px;
+    font-family: 'Glyphicons Halflings';
+    content: "\e150";
+}
+.tablesorter .header.headerSortDown:after{
+    font-size: 10px;
+    font-family: 'Glyphicons Halflings';
+    content: "\e113";
+}
+
+/* Crud style */
+h3 a {
+    color:black !important;
+}
+h3 a:hover {
+    text-decoration: none !important;
+}
+
+.top-right {
+    top: -33px;
+    left: 110px;
+    position: relative;    
+    float: left;
+}

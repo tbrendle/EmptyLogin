@@ -1,4 +1,8 @@
-sudalys
-=======
+Empty project 
+=============
 
-A Symfony project created on September 21, 2016, 11:34 am.
+1 - Fork this 
+
+2 - get a basic app with login/register form, and some bootstrap installed with assets management.
+
+3 - Profit. 
