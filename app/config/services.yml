@@ -4,6 +4,8 @@ parameters:
 #    parameter_name: value
 
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    password_listener:
+        class: AppBundle\EventListener\PasswordEncoderListener
+        arguments: ["@security.password_encoder"]
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
